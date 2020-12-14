@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {% for iqa_item in iqa_items %}
+        <div class="row">
+            <div class="col">
+                <figure class="figure">
+                    <img src={{ iqa_item.filename }} class="figure-img img-fluid rounded" alt="...">
+                    {% for error in iqa_item.slider.errors %}
+                    <figcaption class="figure-caption">[{{ error }}]</figcaption>
+                    {% endfor %}
+                    {{ iqa_item.slider(min=-1, max=100, step=1, value=-1, class="custom-range")}}
+                </figure>
+            </div>
+        </div>
+        {% endfor %}
+        <p>{{ form.submit(class="btn btn-primary") }}</p>
+    </form>
+</div>
+<style>
+    .figure-caption {
+        color: red;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<img src="{{url_for('static',filename='img/banner.jpg')}}" class="img-fluid" alt="Responsive image">
+<blockquote class="blockquote text-center">
+  <p class="mb-0">Praise the sun.</p>
+  <footer class="blockquote-footer">Solaire of Astora in <cite title="Source Title">Dark Souls</cite></footer>
+</blockquote>
+<style type="text/css">
+  .img-fluid {
+    margin: auto;
+    width: 100%;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for card_row in card_set %}
+<br>
+<div class="container">
+  <div class="row">
+    {% for group in card_row %}
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src={{ group.group_cover }} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href={{ group.group_url }} class="btn btn-primary">{{ group.group_id }}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
